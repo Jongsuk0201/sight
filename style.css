@@ -1,0 +1,625 @@
+/*
+Theme Name: Theme-Wu
+Description: Web全栈测试网站
+Version: 6.6.6
+Author: TCH-WU
+Author URI: http://www.sightie.com
+Tags: Flex布局+VW适配
+*/
+
+/*全局*/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	transition: 0.3s;
+	justify-content: space-around;
+}
+a {
+	color: #444;
+	text-decoration: none;
+}
+ol,ul {
+	list-style: none;
+}
+.right {
+	float: right;
+}
+
+/*框架尺寸*/
+body {
+	font-size: 1.2vw;
+	color: #222;
+	font-family: "microsoft yahei", sans-serif;
+	background: #F4F4F4;
+	width: 100vw;
+}
+body main {
+	display: flex;
+}
+body article {
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+}
+body aside {
+	width: 25%;
+}
+
+/*按钮*/
+.button,.button:visited {
+	background: #333;
+	opacity: 0.8;
+	display: inline-block;
+	padding: 0.2vw 0.6vw;
+	font-weight: bold;
+	color: #fff;
+	border-radius: 0.4vw;
+	cursor: pointer;
+}
+.button:hover {
+	background-color: yellowgreen;
+}
+.button:active {
+	color: black;
+}
+.more {
+	color: #fff;
+	background: #333;
+	border-radius: 0.4vw;
+	opacity: 0.8;
+}
+.more:hover {
+	background: darkorange;
+	color: #000;
+}
+
+/* 头部区域 */
+header {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3vw;
+}
+header #site-title {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+/*主标题*/
+header #site-title #logo {
+	font-size: 3.6vw;
+	opacity: 0.7;
+	font-weight: normal;
+	padding-top: 2vw;
+	padding-left: 2.5vw;
+	text-shadow: 2px 1px 4px gray;
+}
+header #site-title #logo a {
+	letter-spacing: 0.5vw;
+}
+header #site-title #logo a:hover {
+	color: yellowgreen;
+}
+
+/*副标题*/
+header #site-title #caption {
+	margin-left: 2vw;
+	padding: 0.5vw 1.2vw;
+	font-size: 1.7vw;
+	opacity: 0.8;
+	letter-spacing: 0.5vw;
+	font-weight: normal;
+	background: tomato;
+	border-radius: 1vw;
+}
+
+/*导航*/
+header nav {
+	padding-top: 1.5vw;
+	padding-right: 1.5vw;
+}
+header nav #top-menu {
+	display: flex;
+	align-items:flex-start;
+}
+header nav #top-menu>li {
+	margin-left: 1.5vw;
+}
+header nav #top-menu>li a {
+	display: block;
+	padding: 0.5vw 1vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	opacity: 0.8;
+}
+header nav #top-menu>li.current-menu-item>a,
+#top-menu>li.current-post-ancestor>a{
+	background: darkorange;
+	border-radius: 0.4vw;
+	opacity: 0.8;
+}
+header nav #top-menu>li a:hover {
+	background: yellowgreen;
+	border-radius: 0.4vw;
+	opacity: 1.0;
+	color: #eee;
+}
+
+/*侧边栏*/
+aside h4 {
+	display: inline-block;
+	font-size: 1.3vw;
+	letter-spacing: 0.3vw;
+	background: yellowgreen;
+	margin: 2.5vw 0 1vw;
+	padding: 0.3vw 0.3vw 0.3vw 0.6vw;
+	border-radius: 0.4vw;
+	opacity: 0.7;
+}
+aside ul {
+	padding-right: 0.3vw;
+}
+aside ul li {
+	font-size: 1vw;
+	line-height: 1.2;
+	padding: 0.5vw 0.2vw 0.5vw 1vw;
+	border-bottom: 0.1vw solid #e4e4e4;
+}
+aside ul li:hover {
+	background: #eee;
+	border-radius: 0.4vw;
+}
+aside a:hover {
+	color: darkorange;
+}
+
+/*页脚*/
+footer {
+	width: 100vw;
+	height: 8vw;
+	font-size: 1.2vw;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+footer span {
+	padding-left: 1.5vw;
+}
+footer span a:hover {
+	color: yellowgreen;
+}
+
+/*幻灯片区*/
+.slider {
+	width: 70vw;
+	height: 28vw;
+	background: #79BA49;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 2vw;
+	border: 0.4vw solid #ccc;
+	border-radius: 0.4vw;
+}
+.slider ul {
+	width: 700vw;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: 1s;
+}
+.slider ul li {
+	float: left;
+	width: 70vw;
+	height: 28vw;
+	position: relative;
+}
+.slider ul li .slider-thumb {
+	width: 46vw;
+	height: 28vw;
+	overflow: hidden;
+}
+.slider ul li img {
+	width: 100%;
+	height: 100%;
+}
+.slide-preview {
+	position: absolute;
+	left: 46vw;
+	top: 1.2vw;
+	opacity: 0.8;
+	color: #eee;
+	padding: 0 1.5vw;
+}
+.slide-preview:hover {
+	opacity: 1;
+}
+.slide-preview a {
+	color: #eee;
+}
+.slide-preview a:hover {
+	color: #fff;
+}
+.slide-preview h2 {
+	margin-bottom: 1vw;
+	padding-bottom: 1vw;
+	font-size: 1.5vw;
+	font-weight: bold;
+	line-height: 1.6;
+	border-bottom: 0.2vw #fff dashed;
+}
+.slide-preview .slide-summary {
+	margin: 0.8vw 0 1.2vw 0;
+	font-size: 1.2vw;
+	line-height: 1.5;
+}
+.slide-preview .more {
+	padding: 0.3vw 0.5vw 0.5vw 1vw;
+	letter-spacing: 0.4vw;
+	font-size: 1.5vw;
+}
+.slider .pre,.slider .next {
+	position: absolute;
+	width: 4vw;
+	height: 7vw;
+	top: 11vw;
+	background: gray;
+	cursor: pointer;
+	opacity: 0.4;
+	font-size: 5vw;
+	text-align: center;
+}
+.slider .pre {
+	left: 0;
+}
+.slider .next {
+	right: 0;
+}
+.slider .pre:hover,.slider .next:hover {
+	opacity: 0.6;
+	color: white;
+}
+.slider .pre::selection,.slider .next::selection{
+	background: transparent;
+}
+
+/*index主页正文*/
+#index article .grid {
+	display: flex;
+	justify-content: space-between;
+}
+#index article .grid .grid-name {
+	font-size: 1.5vw;
+	font-weight: bold;
+	letter-spacing: 0.5vw;
+	margin: 0.5vw 0 0 0.2vw;
+	opacity: 0.8;
+}
+#index article .grid .grid-name a {
+	background: yellowgreen;
+	padding: 0.3vw 0 0.3vw 0.6vw;
+	border-radius: 0.4vw;
+}
+#index article .grid .grid-name a:hover {
+	background: darkorange;
+	color: #eee;
+}
+#index article .grid .left,.grid .right {
+	width: 49%;
+	border: 0.2vw solid #ccc;
+	border-radius: 0.4vw;
+	padding: 1vw 0.5vw 1vw 0.8vw;
+}
+#index article .grid li a {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 2vw;
+}
+#index article .grid li .thumb {
+	width: 12vw;
+	height: 9vw;
+	padding: 0.3vw;
+	overflow: hidden;
+}
+#index article .grid li .thumb img {
+	width: 100%;
+	height: 100%;
+}
+#index article .grid li .preview {
+	font-size: 1vw;
+	width: 20vw;
+	height: 9vw;
+	overflow: hidden;
+	margin-left: 1vw;
+}
+#index article .grid li .preview .title {
+	font-size: 1.2vw;
+	font-weight: bold;
+	height: 3.2vw;
+	overflow: hidden;
+	margin-bottom: 0.3vw;
+}
+#index article .grid li .preview .time {
+	color: #999;
+	float: right;
+	margin: 0 0.8vw 0.2vw 0;
+}
+#index article .grid li .preview .summary {
+	clear: both;
+	line-height: 1.4;
+}
+/*index更多按钮*/
+#index article .grid .more {
+	float: right;
+	font-size: 1.1vw;
+	margin: 2vw 0.5vw 0 0;
+	padding: 0.3vw;
+}
+
+/*single及contact的文章页面*/
+article .title {
+	font-size: 1.5vw;
+	color: #393939;
+	margin-bottom: 1.5vw;
+}
+article .sub {
+	font-size: 1vw;
+	color: #9d9d9d;
+	margin-bottom: 1vw;
+}
+article .post {
+	margin-bottom: 1.5vw;
+}
+article .post .content {
+	font-size: 1.2vw;
+	line-height: 1.5;
+	margin: 0.8vw 4.6vw;
+}
+article .post .content img {
+	display: block;
+	width: 50vw;
+	height: auto;
+	margin: 0.2vw auto;
+}
+article .post .post-buttons {
+	display:flex;
+	justify-content: space-between;
+	margin-right: 1.2vw;
+	font-size: 1.2vw;
+}
+article hr {
+	width: 70vw;
+	border: 0.1vw dotted #E0E0E0;
+	margin: 0 auto 1.5vw;
+}
+
+/*archive归档页面*/
+#archive article .post {
+	height: 17vw;
+}
+#archive article .post-info {
+	display: flex;
+	justify-content: space-between;
+}
+#archive article .post .thumb {
+	width: 20vw;
+	height: 12vw;
+	padding: 0.3vw;
+	border: 0.1vw solid #cccccc;
+	border-radius: 0.4vw;
+	overflow: hidden;
+}
+#archive article .post .thumb img {
+	width: 100%;
+	height: 100%;
+}
+#archive article .post .summary {
+	font-size: 1.2vw;
+	color: #444;
+	line-height: 1.5;
+	width: 38vw;
+	height: 9vw;
+	overflow: hidden;
+	margin: 0.5vw 0 1vw 0;
+}
+#archive article .post .button {
+	font-size: 1vw;
+	margin-top: 8vw;
+	letter-spacing: 0.5vw;
+	padding: 0.3vw 0 0.3vw 0.5vw;
+}
+#archive article hr {
+	width: 70vw;
+	border: 0.1vw dotted #E0E0E0;
+	margin: 0 auto 1.5vw;
+}
+#archive article .flip {
+	font-size: 1.1vw;
+	font-weight: bold;
+	margin: 2vw;
+}
+
+#archive article .flip span a:hover {
+	color: darkorange;
+}
+
+/*评论列表*/
+article h3 {	/*发表评论、留言评论*/
+	font-size: 1.3vw;
+}
+.commentlist li {
+	font-size: 1.1vw;
+	margin: 1vw 5vw;
+	padding: 1vw 0;
+}
+.commentlist li:hover {
+	background: #f4f4f4;
+}
+/*内置评论表单*/
+#commentform {
+	height: 20vw;
+	font-size: 1.2vw;
+	padding-right: 5vw;
+}
+#commentform label {
+	float: left;
+	font-size: 1.3vw;
+	font-weight: bold;
+	letter-spacing: 1vw;
+	margin-top: 0.5vw;
+	margin-left: 16vw;
+}
+#commentform input,#commentform textarea {
+	float: right;
+	margin-bottom: 1.5vw;
+	padding: 0.5vw;
+	border: 0.1vw solid #ccc;
+	background: #fafafa;
+	border-radius: 0.4vw;
+}
+#commentform textarea {
+	width: 40vw;
+	height: 10vw;
+	font-size: 1.2vw;
+	line-height: 1.5;
+	resize: none;
+}
+#commentform textarea:active {
+	background: darkorange;
+}
+#commentform input {
+	clear: both;
+	font-weight: bold;
+	font-size: 1.2vw;
+	letter-spacing: 1vw;
+	width: 40vw;
+	cursor: pointer;
+	margin-bottom: 3vw;
+}
+#commentform input:hover {
+	background: yellowgreen;
+}
+#commentform input:active {
+	color: white;
+}
+
+/*关于页面*/
+aside.info b {
+	display: block;
+	font-size: 1.2vw;
+	margin-bottom: 1vw;
+} 
+aside.info li.im {
+	border: none;
+}
+aside.info li.im:hover {
+	background: none;
+}
+aside.info li.im img {
+	width: 2.4vw;
+	height: 2.4vw;
+}
+
+/*内置搜索框*/
+#searchform {
+	margin: 0.3vw auto 1vw;
+}
+#searchform label {
+	display: none;
+}
+#searchform input[type="text"] {
+	font-size: 1.2vw;
+	padding-left: 0.4vw;
+	border: 0.1vw dashed #ccc;
+	border-radius: 0.4vw;
+	width: 18vw;
+	line-height: 2;
+	vertical-align: text-bottom;
+}
+#searchform input[type="submit"] {
+	border: 0.1vw solid #ccc;
+	border-radius: 0.2vw 0.7vw 0.7vw 0.2vw;
+	background: darkorange;
+	opacity: 0.8;
+	font-size: 1.2vw;
+	font-weight: bold;
+	letter-spacing: 0.8vw;
+	color: #444;
+	height: 2.6vw;
+	margin-left: 0.4vw;
+	padding: 0.2vw 0.2vw 0.2vw 0.9vw;
+	vertical-align: text-bottom;
+	cursor: pointer;
+}
+#searchform input[type="submit"]:hover {
+	background: yellowgreen;
+	color: #fff;
+}
+
+/*内置标签云*/
+.tagcloud {
+	margin: 0.5vw 0 0.5vw 0.5vw;
+}
+.tagcloud a {
+	opacity: 0.7;
+	color: white;
+	display: inline-block;
+	margin: 0.5vw 0.3vw;
+	padding: 0.3vw 0.9vw;
+	line-height: 1.5;
+	border-radius: 2vw;
+	background: lightseagreen;
+}
+.tagcloud a:hover{opacity: 1;}
+
+/*内置日历*/
+#wp-calendar {
+	width: 25vw;
+	margin: 0 auto;
+}
+#wp-calendar td {
+	color: #ccc;
+}
+#wp-calendar td#today {
+	background: #ccc;
+	color: #666;
+}
+#wp-calendar th {
+	background: #999;
+	line-height: 2vw;
+	color: #fff;
+}
+#wp-calendar th,#wp-calendar td {
+	text-align: center;
+}
+#wp-calendar tbody td {
+	width: 2.5vw;
+	height: 1.3vw;
+}
+#wp-calendar tbody td:hover {
+	background: lightseagreen;
+	cursor: pointer;
+}
+
+/*通知公告*/
+#notice {
+	margin-top: 0.5vw;
+	margin-bottom: 3.5vw;
+}
+#notice li {
+	background: rgba(0, 191, 255, 0.5);
+	margin: 0.2vw 0 0.3vw 0.1vw;
+	border-radius: 0.4vw;
+}
+#notice li:before {
+	content: "•";
+}
+#notice .more {
+	float: right;
+	margin-top: 0.5vw;
+	margin-right: 0.2vw;
+	padding: 0.3vw;
+}
